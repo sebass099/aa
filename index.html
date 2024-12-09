@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificaciones de Profesores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="login-form">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" placeholder="Ingresa tu correo" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <p>¿No tienes una cuenta? <a id="register-link" href="#">Regístrate aquí</a></p>
+  </div>
+
+  <div id="register-container" style="display: none;">
+    <h2>Registrarse</h2>
+    <form id="register-form">
+      <label for="register-email">Correo electrónico:</label>
+      <input type="email" id="register-email" placeholder="Ingresa tu correo" required>
+
+      <label for="register-password">Contraseña:</label>
+      <input type="password" id="register-password" placeholder="Crea una contraseña" required>
+
+      <label for="register-role">Selecciona tu rol:</label>
+      <select id="register-role" required>
+        <option value="">Seleccionar...</option>
+        <option value="profesor">Profesor</option>
+        <option value="estudiante">Estudiante</option>
+      </select>
+
+      <button type="submit">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a id="login-link" href="#">Inicia sesión aquí</a></p>
+  </div>
+
+  <div id="app-container" style="display: none;">
+    <h2>Bienvenido a la aplicación</h2>
+    <button id="notificaciones-btn" style="display: none;">Gestionar Notificaciones</button>
+    <button id="calendario-btn">Ver Calendario</button>
+    <button id="config-btn" style="display: none;">Configuración</button>
+
+    <!-- Sección para marcar faltas -->
+    <div id="form-falta" style="display: none;">
+      <h3>Marcar día de ausencia</h3>
+      <form id="falta-form">
+        <label for="fecha-falta">Fecha de ausencia:</label>
+        <input type="date" id="fecha-falta" required>
+        
+        <label for="motivo-falta">Motivo:</label>
+        <textarea id="motivo-falta" placeholder="Escribe el motivo de la ausencia" required></textarea>
+        
+        <button type="submit">Enviar Notificación</button>
+      </form>
+    </div>
+
+    <!-- Lista de notificaciones para los estudiantes -->
+    <div id="notificaciones-estudiantes" style="display: none;">
+      <h3>Notificaciones de Ausencias</h3>
+      <ul id="lista-notificaciones">
+        <!-- Aquí se agregarán las notificaciones -->
+      </ul>
+    </div>
+
+    <div id="notificaciones" style="display: none;">
+      <h3>Notificaciones</h3>
+      <label for="mensaje-falta">Mensaje de falta:</label>
+      <textarea id="mensaje-falta" placeholder="Escribe un mensaje para los estudiantes..." rows="4" cols="50"></textarea>
+      <button id="enviar-notificacion">Enviar Notificación</button>
+    </div>
+
+    <div id="calendario" style="display: none;">
+      <h3>Calendario</h3>
+      <p>Eventos para todos los usuarios.</p>
+    </div>
+
+    <div id="configuracion" style="display: none;">
+      <h3>Configuración</h3>
+      <p>Opciones de configuración para profesores.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
